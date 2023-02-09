@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <style>
+        .product-price {
+            background-color: #00bfff;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+    <style>
+      body {
+        background-image: url(https://lh3.googleusercontent.com/ceDWmRHGG0qqCBYEy9U4kFK2VeDHHJnNU6Wbykvt1KZ-AJHWuvel4yaVzAed_QbGa2dlf-MYmM02QqiBfXODOmtxVtTf8QoZvTZiXraq2e8Fb1zHrA4j5-xaL3PydoBmev4eSG2vzl6Dn7nytLGJ04QIgUEWuBbBjAhKrndgeyQzk57Twvk9jxP8inH7NsgGszHPqMzQ3wXmTG-2mgZwSWfOOBa_smbLrULIdV82Dsazmt4wJOHY9LufgqPSQxNYFnJmYDzn1cOcNo-fqL0byL-NCFzaOig4hrDogcZlkUw8H1gE-m6TArADIZcGpkVb9GCRrSJgeMjmS_pRGpt4wpflXTcMGzkbm7p5jlxLPR95KHaHdDEfYPTNFCeITs0cMS-nQcIWFe0zo0jG8qL9D2-KUc5xnoTtWlqv7h0ZqcYJG8TwDe7WiZ7PS-I4bmjoTmupjBJQuQWZSHOqz0p_Ztc8KbgXcD03nM5krcul2rNej_WCta_mkrWnmKPwE4lFq3zvri3omF1Pw1QcJRAxhVspe_1VVZB4upqGab1H3mZHT8m32fOzv0xWdbSERTibnFWT5tpInBhiaPZX6U1gTcNB33olYtZ-irUspbt-_O2EDdQYfVbD0A4BntazOvhwr9ONk9Wfytl79YfcBK715uw9FesPbdk8zRCNOLeC1QQxpLc_ZBrb-OjZqLtfRkGS-HhxVLrbkutXxXBnguFIPu8upKp2Ytq_pMY-9iYHkDj-Wu2-GzlzMV6FvpMA2UBqUQJ3XE6kWy4pJZNhkULyciyqUIqNkZQQDQXZraSTJ7fCwkHuCqPBiMWZyuHM7NA2HdNIsinSnd7rJyhtupmjrupAOQx1p6gmbdZLKTFQ_24iAF2u1ejtyJt_xC6By3XQbrHqiAZWucCEwEdluA4GDFxY5Zo3iCAESA7e=w1900-h950-no?authuser=0);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .product-info {
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+      }
+    </style>
+    <title>Products</title>
+</head>
+<body>
+<nav class="navbar bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Jute Bags</a>
+    </div>
+</nav>
+<div class="container my-5">
+    <h1 class="text-center text-primary">Our Products</h1>
+    <hr>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <div class="product-price">
+                        ₹{{ product.price }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
